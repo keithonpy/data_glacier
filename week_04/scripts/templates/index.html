@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+  <main>
+        <h1>Welcome to House price prediction in Iowa!!</h1>
+
+
+        <form action="{{url_for('predict')}}" method = "post">
+          <label for="lotarea">Lot size (in sq ft): </label>
+          <input type="number" name="lotarea"  required>
+          <br>
+          <label for="Year">Construction Year: </label>
+          <input type="text" name="Year"  required>
+          <br>
+          <label for="1stSF">1st floor (in sq ft): </label>
+          <input type="number" name="email"  required>
+          <br>
+          <label for="2ndSF">2nd floor (in sq ft): </label>
+          <input type="number" name="2ndSF" >
+          <br>
+          <label for="Bath">Number of bathrooms: </label>
+          <input type="number" name="Bath"  required>
+          <br>
+          <label for="Totrms">Total rooms (not include bathroom): </label>
+          <input type="number" name="Totrms"  required>
+          <br>
+          <input type="submit" value="Predict!">
+        </form>
+        <br>
+        <br>
+        {{ prediction_text }}
+
+    </main>
+  <script src="index.js"></script>
+{% endblock %}
+
+
